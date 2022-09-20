@@ -15,7 +15,10 @@ function App() {
       <Header />
       <Container>
         <Routes>
-          <Route path="/ProductGallery" element={<Navigate to="/products" />} />
+          <Route
+            path="/ProductGallery"
+            element={<Navigate to="/ProductGallery/products" />}
+          />
           <Route
             path={"/ProductGallery/products"}
             element={<ProductGallery />}
