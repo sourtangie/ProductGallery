@@ -6,14 +6,14 @@ import { Product } from "./types/types";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { ProductGallery } from "./pages/ProductGallery";
 import { ProductPage } from "./pages/ProductPage";
-import { Container } from "react-bootstrap";
+
 import { Header } from "./components/Header";
 
 function App() {
   return (
     <div>
       <Header />
-      <Container>
+      <div>
         <Routes>
           <Route
             path="/ProductGallery"
@@ -28,7 +28,7 @@ function App() {
             element={<ProductPage />}
           />
         </Routes>
-      </Container>
+      </div>
     </div>
   );
 }

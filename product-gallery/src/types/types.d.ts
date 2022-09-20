@@ -4,6 +4,8 @@ export interface Product {
   comments?: string[];
   images: Image[];
   price: string;
+  description: string;
+  specification: string;
 }
 
 export interface Image {

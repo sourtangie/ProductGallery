@@ -7,10 +7,10 @@ import { ProductListItem } from "../ProductListItem";
 
 export const CommentItem = (props: { comment: CommentObject }) => {
   return (
-    <Card style={{}}>
+    <Card style={{ marginBottom: "10px" }}>
       <Card.Body>
-        <Card.Title>{props.comment.name}</Card.Title>
-        <Card.Text>{props.comment.content}</Card.Text>
+        <Card.Title>{props.comment.content}</Card.Title>
+        <Card.Text>From: {props.comment.name}</Card.Text>
       </Card.Body>
     </Card>
   );

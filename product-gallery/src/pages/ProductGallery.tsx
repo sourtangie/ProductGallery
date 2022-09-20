@@ -1,4 +1,4 @@
-import { Pagination, Row, Spinner } from "react-bootstrap";
+import { Container, Pagination, Row, Spinner } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import { ProductList } from "../components/products/ProductList";
 import * as dataFunctions from "../util/GetData";
@@ -19,7 +19,7 @@ export const ProductGallery = () => {
     get();
   }, []);
   return (
-    <div style={{ height: "100vh" }}>
+    <Container style={{ height: "100vh" }}>
       <Row>
         <p className="fs-1 dark-sienna">Our Products</p>
       </Row>
@@ -27,11 +27,12 @@ export const ProductGallery = () => {
         {!loading ? (
           <ProductList items={products}></ProductList>
         ) : (
+          /* LOADING STATE */
           <p className="fs-3">
             Loading Products... <Spinner animation="border"></Spinner>
           </p>
         )}
       </Row>
-    </div>
+    </Container>
   );
 };
