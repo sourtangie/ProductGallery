@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import * as types from "../../types/types";
 import { ImageItem } from "./ImageItem";
-import { StyledImageContainer, StyledImageGalleryRow } from "./StyledImages";
+import {
+  CenterImageDiv,
+  StyledImageContainer,
+  StyledImageGalleryRow,
+} from "./StyledImages";
 
 export const ImageGallery = (props: { images: types.Image[] }) => {
   const [selectedImage, setSelectedImage] = useState<types.Image>(
@@ -14,9 +18,9 @@ export const ImageGallery = (props: { images: types.Image[] }) => {
 
   return (
     <div>
-      <div style={{ width: "777px", height: "480px" }}>
+      <CenterImageDiv>
         <ImageItem large image={selectedImage}></ImageItem>
-      </div>
+      </CenterImageDiv>
       <StyledImageGalleryRow>
         {props.images.map((image, index) => (
           <StyledImageContainer
