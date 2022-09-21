@@ -9,13 +9,14 @@ export const ImageItem = (props: {
   return props.large ? (
     <StyledImageItem
       src={props.image.original}
-      style={{ maxHeight: "50vh", maxWidth: "50vw" }}
+      style={{ maxHeight: "30vh", maxWidth: "30vw" }}
     />
   ) : (
     <StyledImageItem
       thumbnail
       src={props.image.thumb}
       className={props.className}
+      style={{ maxHeight: "15vh", maxWidth: "15vw" }}
     />
   );
 };
