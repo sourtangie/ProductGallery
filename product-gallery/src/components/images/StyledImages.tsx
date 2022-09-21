@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const StyledImageItem = styled(Image)`
   max-height: 20vh;
-  max-width: 20vh;
+  max-width: 20vw;
   ${(props) =>
     props.className?.includes("selected") ? "border:2px solid blue" : ""}
 `;

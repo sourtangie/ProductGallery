@@ -34,7 +34,7 @@ export const ProductPage = () => {
         ← Go back
       </Button>
       <Row className="">
-        <Col>
+        <Col xs={12} md={6}>
           <p className="fs-2">{product?.title}</p>
           <ImageGallery images={product?.images} />
         </Col>

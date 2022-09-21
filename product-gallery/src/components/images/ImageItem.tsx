@@ -9,7 +9,7 @@ export const ImageItem = (props: {
   return props.large ? (
     <StyledImageItem
       src={props.image.original}
-      style={{ maxHeight: "50vh", maxWidth: "70vh" }}
+      style={{ maxHeight: "50vh", maxWidth: "50vw" }}
     />
   ) : (
     <StyledImageItem
