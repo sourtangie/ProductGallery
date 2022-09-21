@@ -1,14 +1,9 @@
-import { Pagination, Row } from "react-bootstrap";
-import React, { useEffect, useState } from "react";
-import { ProductList } from "../../components/products/ProductList";
-import * as dataFunctions from "../../util/GetData";
-import { useNavigate } from "react-router-dom";
-import Image from "react-bootstrap/Image";
+import React, { useState } from "react";
 import * as types from "../../types/types";
 import { ImageItem } from "./ImageItem";
+import { StyledImageContainer, StyledImageGalleryRow } from "./StyledImages";
 
 export const ImageGallery = (props: { images: types.Image[] }) => {
-  const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState<types.Image>(
     props.images[0]
   );
@@ -22,11 +17,10 @@ export const ImageGallery = (props: { images: types.Image[] }) => {
       <div style={{ width: "777px", height: "480px" }}>
         <ImageItem large image={selectedImage}></ImageItem>
       </div>
-      <Row style={{ flexDirection: "row", justifyContent: "flex-start" }}>
+      <StyledImageGalleryRow>
         {props.images.map((image, index) => (
-          <div
+          <StyledImageContainer
             onClick={() => handleSelectImage(image)}
-            style={{ width: "initial", marginTop: "10px" }}
             key={index}
           >
             <ImageItem
@@ -34,9 +28,9 @@ export const ImageGallery = (props: { images: types.Image[] }) => {
               large={false}
               className={selectedImage == image ? "selected" : ""}
             />
-          </div>
+          </StyledImageContainer>
         ))}
-      </Row>
+      </StyledImageGalleryRow>
     </div>
   );
 };

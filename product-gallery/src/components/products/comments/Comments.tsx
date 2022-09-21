@@ -41,7 +41,15 @@ export const Comments = (props: { product: Product }) => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        background: "lightgray",
+        borderRadius: "5px 0px 0px 0px",
+        paddingBottom: "10vh",
+        paddingTop: "2vh",
+      }}
+    >
+      <p className="fs-3">Comments</p>
       <Form onSubmit={submit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Name</Form.Label>

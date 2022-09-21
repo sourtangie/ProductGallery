@@ -1,11 +1,10 @@
-import { Container, Pagination, Row, Spinner } from "react-bootstrap";
-import React, { useEffect, useState } from "react";
+import { Container, Row, Spinner } from "react-bootstrap";
+import { useEffect, useState } from "react";
 import { ProductList } from "../components/products/ProductList";
 import * as dataFunctions from "../util/GetData";
-import { useNavigate } from "react-router-dom";
+
 export const ProductGallery = () => {
   const [products, setProducts] = useState([]);
-  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
 
   async function get() {

@@ -11,7 +11,6 @@ const StyledHeader = styled.div`
     p {
       border: 1px solid red;
       float: left;
-      // margin: 0 .5em;
       padding: 0 0.5em;
     }
     img {
@@ -25,10 +24,8 @@ const StyledHeader = styled.div`
     li {
       display: inline-block;
       a {
-        //display: inline-block;
         padding: 0 0.5em;
         text-decoration: none;
-        //width: 100%;
       }
     }
   }

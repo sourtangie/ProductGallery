@@ -1,5 +1,4 @@
-import React from "react";
-import { Col, ListGroup, Row } from "react-bootstrap";
+import { ListGroup } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { Product } from "../../types/types";
 import { ProductListItem } from "./ProductListItem";

@@ -38,15 +38,18 @@ export const ProductPage = () => {
           <p className="fs-2">{product?.title}</p>
           <ImageGallery images={product?.images} />
         </Col>
-        <Col style={{ backgroundColor: "lightgray", borderRadius: "5px" }}>
-          <p className="fs-2">Price: ${product?.price}</p>
-          <p className="fs-3 lh-1">Description</p>
+        <Col
+          style={{
+            backgroundColor: "lightgray",
+            borderRadius: "5px 5px 0px 0px",
+          }}
+        >
+          <p className="fs-2 dark-sienna">Price: ${product?.price}</p>
+          <p className="fs-3 lh-1 dark-sienna">Description</p>
           <p className="">{product?.specification}</p>
-          <p className="fs-3 lh-1">Specifications</p>
+          <p className="fs-3 lh-1 dark-sienna">Specifications</p>
           <p className="">{product?.description}</p>
         </Col>
-        <p className="fs-3">Comments</p>
-
         <Comments product={product}></Comments>
       </Row>
     </Container>

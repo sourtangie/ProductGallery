@@ -20,6 +20,10 @@ function App() {
             element={<Navigate to="/ProductGallery/products" />}
           />
           <Route
+            path="/"
+            element={<Navigate to="/ProductGallery/products" />}
+          />
+          <Route
             path={"/ProductGallery/products"}
             element={<ProductGallery />}
           />
