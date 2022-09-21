@@ -1,26 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { Form, Button, Col, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Form, Button } from "react-bootstrap";
 import { CommentObject, Product } from "../../../types/types";
 import { getComments, placeComment } from "../../../util/CommentService";
-import { ProductListItem } from "../ProductListItem";
 import { CommentItem } from "./CommentItem";
+import { StyledCommentsContainer } from "./StyledComments";
 
 export const Comments = (props: { product: Product }) => {
-  const navigate = useNavigate();
-
   const [commentInProgress, setCommentInProgress] = useState<CommentObject>({
     content: "",
     name: "",
   });
   const [comments, setComments] = useState<CommentObject[]>([]);
-  const [name, setName] = useState("");
 
   const submit = (event: any) => {
     event.preventDefault();
     placeComment(commentInProgress, props.product.id);
     setComments(comments.concat(commentInProgress));
   };
+
   useEffect(() => {
     const comments = getComments(props.product.id);
     if (comments) {
@@ -41,14 +38,7 @@ export const Comments = (props: { product: Product }) => {
   };
 
   return (
-    <div
-      style={{
-        background: "lightgray",
-        borderRadius: "5px 0px 0px 0px",
-        paddingBottom: "10vh",
-        paddingTop: "2vh",
-      }}
-    >
+    <StyledCommentsContainer>
       <p className="fs-3">Comments</p>
       <Form onSubmit={submit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -79,6 +69,6 @@ export const Comments = (props: { product: Product }) => {
       {comments.map((comment, index) => (
         <CommentItem key={index} comment={comment}></CommentItem>
       ))}
-    </div>
+    </StyledCommentsContainer>
   );
 };
